@@ -1,0 +1,141 @@
+/* Container covering the whole viewport */
+.app-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #111111; /* dark background */
+}
+
+/* Main chat box */
+.chat-box {
+  width: 100%;
+  max-width: 600px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.chat-header h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+/* Chat messages container */
+.chat-messages {
+  overflow-y: auto;
+  height: 400px;
+  padding: 16px;
+  border: 1px solid #2c2c2c;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Message rows */
+.message-row {
+  display: flex;
+}
+
+.user-message {
+  justify-content: flex-end;
+}
+
+.ai-message {
+  justify-content: flex-start;
+}
+
+/* Message bubble */
+.message-bubble {
+  max-width: 250px;
+  padding: 12px;
+  border-radius: 12px;
+  color: #ffffff;
+  background-color: #333333;
+  word-wrap: break-word;
+}
+
+.user-message .message-bubble {
+  background-color: #2563eb; /* blue bubble for user */
+}
+
+/* Typing indicator */
+.typing {
+  background-color: #444444;
+  animation: pulse 1s infinite;
+}
+
+/* Form at bottom */
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .chat-form {
+    flex-direction: row;
+    gap: 8px;
+  }
+}
+
+/* Input field */
+.chat-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #444444;
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+.chat-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+/* Send button */
+.chat-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #444444;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chat-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chat-button:hover:enabled {
+  background-color: #2563eb;
+  transition: background-color 0.2s;
+}
+
+/* Pulse animation for typing */
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
