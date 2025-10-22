@@ -20,59 +20,93 @@ chatapp/
 │ ├── app.py
 │ ├── .env
 │ ├── requirements.txt
-│
 └── Frontend/
-    ├──chatui
-        ├── src/
-        ├── package.json
-        ├── vite.config.js
+└── chatui/
+├── src/
+├── package.json
+├── vite.config.js
+
+yaml
+Copy code
 
 ---
 
 ## Backend Setup
 1. Go to the backend folder:
-   cd Backend
-   
-**(Optional) Create and activate a virtual environment:**
+cd Backend
+
+cpp
+Copy code
+
+2. (Optional) Create and activate a virtual environment:
 conda create -n chatbot python=3.11
 conda activate chatbot
 
-**Install dependencies:**
+markdown
+Copy code
+
+3. Install dependencies:
 pip install -r requirements.txt
 
+yaml
+Copy code
 or manually:
 pip install fastapi uvicorn python-dotenv groq
 
-**Create a .env file in the Backend folder:**
+markdown
+Copy code
+
+4. Create a `.env` file in the Backend folder:
 GROQ_API_KEY=your_groq_api_key_here
 
-**Run the backend:**
+markdown
+Copy code
+
+5. Run the backend:
 uvicorn app:app --reload
-The backend will run at http://127.0.0.1:8000
+
+yaml
+Copy code
+The backend will run at: **http://127.0.0.1:8000**
+
+---
 
 ## Frontend Setup
-Go to the frontend folder:
+1. Go to the frontend folder:
 cd ../Frontend
 
-**Install dependencies:**
+markdown
+Copy code
+
+2. Install dependencies:
 npm install
-Run the frontend:
 
+markdown
+Copy code
+
+3. Run the frontend:
 npm run dev
-The frontend will run at http://localhost:5173
 
-**API Usage Example**
-POST /chat/
+yaml
+Copy code
+The frontend will run at: **http://localhost:5173**
+
+---
+
+## API Usage Example
+**POST /chat/**  
+
 **Request:**
-JSON (Copy code)
+```json
 {
   "message": "Hello!",
   "role": "user",
   "conversation_id": "12345"
 }
+Response:
 
-**Response:**
-JSON (Copy code)
+json
+Copy code
 {
   "response": "Hi there! How can I help you today?",
   "conversation_id": "12345"
