@@ -26,8 +26,7 @@ chatapp/
 ├── package.json
 ├── vite.config.js
 
-yaml
-Copy code
+
 
 ---
 
@@ -35,32 +34,25 @@ Copy code
 1. Go to the backend folder:
 cd Backend
 
-cpp
-Copy code
 
 2. (Optional) Create and activate a virtual environment:
 conda create -n chatbot python=3.11
 conda activate chatbot
 
-markdown
-Copy code
 
-3. Install dependencies:
+4. Install dependencies:
 pip install -r requirements.txt
 
-yaml
-Copy code
+
 or manually:
 pip install fastapi uvicorn python-dotenv groq
 
-markdown
-Copy code
+
 
 4. Create a `.env` file in the Backend folder:
 GROQ_API_KEY=your_groq_api_key_here
 
-markdown
-Copy code
+
 
 5. Run the backend:
 uvicorn app:app --reload
@@ -75,20 +67,17 @@ The backend will run at: **http://127.0.0.1:8000**
 1. Go to the frontend folder:
 cd ../Frontend
 
-markdown
-Copy code
+
 
 2. Install dependencies:
 npm install
 
-markdown
-Copy code
+
 
 3. Run the frontend:
 npm run dev
 
-yaml
-Copy code
+
 The frontend will run at: **http://localhost:5173**
 
 ---
@@ -97,16 +86,15 @@ The frontend will run at: **http://localhost:5173**
 **POST /chat/**  
 
 **Request:**
-```json
+
 {
   "message": "Hello!",
   "role": "user",
   "conversation_id": "12345"
 }
-Response:
 
-json
-Copy code
+**Response:**
+
 {
   "response": "Hi there! How can I help you today?",
   "conversation_id": "12345"
