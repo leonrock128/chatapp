@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
+import { BASE_URL } from './config';
 
 const App = () => {
   const [message, setMessage] = useState('');
@@ -33,7 +34,7 @@ const App = () => {
     ]);
 
     try {
-      const response = await fetch(`https://chatapp-backend-opzu.onrender.com/chat/`, {
+      const response = await fetch(`${BASE_URL}/chat/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
